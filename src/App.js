@@ -7,13 +7,13 @@ import './App.css';
 
 // --- 1. YOUR FIREBASE CONFIGURATION ---
 const firebaseConfig = {
-  apiKey: "AIzaSyCcbd4jOi8v1hMSxBCdihtuhwNg0llLNRo",
-  authDomain: "blockchainapp-ed1b0.firebaseapp.com",
-  projectId: "blockchainapp-ed1b0",
-  storageBucket: "blockchainapp-ed1b0.firebasestorage.app",
-  messagingSenderId: "531306385986",
-  appId: "1:531306385986:web:0dbabd733601f77e2253db",
-  measurementId: "G-RQP2LJF4XG"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID
 };
 
 // Initialize Firebase
