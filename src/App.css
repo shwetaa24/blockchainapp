@@ -1,38 +1,250 @@
-.App {
+/* Global Dark Theme */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0f172a; /* Dark Slate */
+  color: #e2e8f0;
+}
+
+.app-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Header */
+.app-header {
   text-align: center;
+  margin-bottom: 40px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-header h1 {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 15px;
+  color: #60a5fa; /* Blue */
+  margin: 0;
+}
+
+.app-header p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #94a3b8;
+}
+
+/* Cards */
+.card {
+  background-color: #1e293b;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #334155;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  margin-bottom: 30px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.icon-green {
+  color: #34d399;
+}
+
+/* Form */
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+input {
+  background-color: #334155;
+  border: 1px solid #475569;
+  color: white;
+  padding: 12px;
+  border-radius: 6px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #60a5fa;
+}
+
+.mine-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.2s;
+}
+
+.mine-btn:hover {
+  background-color: #1d4ed8;
+}
+
+.mine-btn:disabled {
+  background-color: #475569;
+  cursor: not-allowed;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Status Badge */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  border: 1px solid transparent;
+}
+
+.secure {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.danger {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+/* Blockchain List */
+.block-wrapper {
+  position: relative;
+}
+
+.chain-link {
+  width: 4px;
+  height: 30px;
+  background-color: #475569;
+  margin-left: 40px; 
+}
+
+.block-card {
+  background-color: #1e293b;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 5px solid #3b82f6; /* Blue accent */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.error-border {
+  border-left-color: #ef4444;
+}
+
+.block-info {
+  flex: 1;
+}
+
+.block-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.badge {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #93c5fd;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.timestamp {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.hash-row {
+  font-family: monospace;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.hash-row span {
+  color: #34d399;
+}
+
+.block-data {
+  background-color: #0f172a;
+  padding: 15px;
+  border-radius: 6px;
+  min-width: 200px;
+}
+
+.data-label {
+  font-size: 0.7rem;
+  color: #64748b;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+}
+
+.data-flow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #60a5fa;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+.data-item {
+  font-weight: bold;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #059669;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+  animation: slideIn 0.3s ease-out;
+  z-index: 100;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
